@@ -1,0 +1,80 @@
+﻿@model wmdsoftware.Models.Visitorregistration
+
+@{
+    ViewData["Title"] = "Visitor Details";
+}
+
+<style>
+    body {
+        background-color: #fdf1ec;
+    }
+
+    .details-card {
+        background-color: white;
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-label {
+        font-weight: 600;
+        color: #555;
+    }
+
+    .detail-value {
+        color: #333;
+        font-size: 1.05rem;
+    }
+
+    .btn-purple {
+        background-color: #8e44ad;
+        color: white;
+        font-weight: 600;
+        border-radius: 10px;
+    }
+
+        .btn-purple:hover {
+            background-color: #732d91;
+        }
+
+    .btn-outline-dark {
+        border-radius: 10px;
+    }
+</style>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="details-card">
+                <div class="text-center mb-4">
+                    <h4 class="fw-bold text-muted">Visitor Details</h4>
+                </div>
+
+                <dl class="row">
+                    <dt class="col-sm-4 detail-label">@Html.DisplayNameFor(model => model.Name)</dt>
+                    <dd class="col-sm-8 detail-value">@Html.DisplayFor(model => model.Name)</dd>
+
+                    <dt class="col-sm-4 detail-label">@Html.DisplayNameFor(model => model.Designation)</dt>
+                    <dd class="col-sm-8 detail-value">@Html.DisplayFor(model => model.Designation)</dd>
+
+                    <dt class="col-sm-4 detail-label">@Html.DisplayNameFor(model => model.ContactNumber)</dt>
+                    <dd class="col-sm-8 detail-value">@Html.DisplayFor(model => model.ContactNumber)</dd>
+
+                    <dt class="col-sm-4 detail-label">@Html.DisplayNameFor(model => model.City)</dt>
+                    <dd class="col-sm-8 detail-value">@Html.DisplayFor(model => model.City)</dd>
+
+                    <dt class="col-sm-4 detail-label">@Html.DisplayNameFor(model => model.Company)</dt>
+                    <dd class="col-sm-8 detail-value">@Html.DisplayFor(model => model.Company)</dd>
+
+                    <dt class="col-sm-4 detail-label">@Html.DisplayNameFor(model => model.Email)</dt>
+                    <dd class="col-sm-8 detail-value">@Html.DisplayFor(model => model.Email)</dd>
+                </dl>
+
+                <div class="d-flex justify-content-between mt-4">
+                    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-purple">Edit</a>
+                    <a asp-action="Index" class="btn btn-outline-dark">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
